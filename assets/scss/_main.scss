@@ -3,6 +3,151 @@
 @use './module/variables' as *;
 
 .main{
+    &__1{
+        @include vw-convert-pc(padding-top, 200);
+        @include vw-convert-pc(gap, 20);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &--image{
+            @include vw-convert-pc(margin-top, 40);
+            display: flex;
+            img{
+                width: 33.333%;
+            }
+        }
+    }
+    .title{
+        @include em-font-size-pc(50);
+        @include vw-convert-pc(width, 450);
+    }
+    .desc{
+        text-transform: uppercase;
+        @include em-font-size-pc(20);
+        @include vw-convert-pc(margin-bottom, 20);
+    }
+    &__head{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include vw-convert-pc(margin-bottom, 30);
+        &--title{
+            @include em-font-size-pc(60);
+            &.white{
+                color: #fff;
+            }
+        }
+    }
+    &__2{
+        @include vw-convert-pc(padding, 0 55);
+        &--image{
+            display: flex;
+            justify-content: space-between;
+            li{
+                width: calc((100% - 40px)/3);
+            }
+            a{
+                display: block;
+            }
+            img{
+                width: 100%;
+            }
+        }
+    }
+    &__3{
+        @include vw-convert-pc(padding, 150 55);
+    }
+    &__list{
+        &--head{
+            display: flex;
+            @include vw-convert-pc(padding-bottom, 40);
+            p{
+                @include em-font-size-pc(20);
+                text-transform: uppercase;
+                &:nth-of-type(1){
+                    width: 25%;
+                }
+                &:nth-of-type(2){
+                    width: 25%;
+                }
+                &:nth-of-type(3){
+                    width: 50%;
+                }
+            }
+
+        }
+        &--body{
+            a{
+                display: flex;
+                align-items: center;
+                @include em-font-size-pc(20);
+                @include vw-convert-pc(padding, 40 0);
+                color: #000;
+                border-top: 1px solid #000;
+                &:hover{
+                    .main__list--name img{
+                        @include vw-convert-pc(width, 150);
+                        @include vw-convert-pc(margin-right, 20);
+                    }
+                }
+            }
+        }
+        &--name{
+            display: flex;
+            align-items: center;
+            width: 25%;
+            img{
+                @include vw-convert-pc(height, 70);
+                @include vw-convert-pc(border-radius, 10);
+                width: 0;
+                transition: 0.5s;
+            }
+            p{
+
+            }
+        }
+        &--location{
+            width: 25%;
+        }
+        &--info{
+            width: 50%;
+            display: flex;
+            gap: 10px;
+            p{
+                @include vw-convert-pc(padding, 5 10);
+                @include vw-convert-pc(border-radius, 50);
+                border: 1px solid #000;
+            }
+        }
+        &.black{
+            color: #fff;
+            .main__list--body{
+                a{
+                    color: #fff;
+                    border-top: 1px solid #fff;
+                }
+            }
+            .main__list--info{
+                p{
+                    border: 1px solid #fff;
+                }
+            }
+        }
+    }
+    &__4{
+        border: 1px solid black;
+        @include vw-convert-pc(padding, 375 0);
+        background: url('../images/location_spotlight.jpg') no-repeat center/100% auto;
+        color: #fff;
+        .title{
+            width: 100%;
+        }
+    }
+    &__5{
+        @include vw-convert-pc(padding, 150 55);
+        background-color: rgb(29, 29, 29);
+    }
     @media (max-width: 768px){
     }
 }
