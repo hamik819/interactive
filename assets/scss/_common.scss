@@ -60,7 +60,7 @@ body{
 }
 header{
     width: 100%;
-	position: absolute;
+	position: fixed;
 	top: 0;
     left: 0;
 	z-index: 100;
@@ -72,11 +72,23 @@ header{
         &__menu{
             display: flex;
             gap: 20px;
+            transform: translateY(100%);
+            opacity: 0;
+            transition: 1s;
+        }
+        &.active{
+            .logo, .header__menu{
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
     }
     .logo{
         display: inline-block;
         @include vw-convert-pc(width, 90);
+        transform: translateY(100%);
+        opacity: 0;
+        transition: 1s;
         img{
             width: 100%;
         }

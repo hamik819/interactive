@@ -33,7 +33,7 @@
     </header>
     
     <div id="container" class="main">
-        <section class="main__1">
+        <section class="main__1 main__start">
             <h1 class="title">The destination for your next one</h1>
             <p class="desc">hafh is a discovery platform for the modern traveller</p>
             <button type="button" class="btn_primary">What we're about</button>
@@ -51,16 +51,19 @@
             <ul class="main__2--image">
                 <li>
                     <a href="">
+                        <div></div>
                         <img src="assets/images/gif1.gif" alt="">
                     </a>
                 </li>
                 <li>
                     <a href="">
+                        <div></div>
                         <img src="assets/images/gif2.gif" alt="">
                     </a>
                 </li>
                 <li>
                     <a href="">
+                        <div></div>
                         <img src="assets/images/gif3.gif" alt="">
                     </a>
                 </li>
@@ -210,8 +213,10 @@
 <!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> -->
 <script type="text/javascript" src="assets/js/lib/jquery-3.5.1.min.js"></script>
 <!-- <script type="text/javascript" src="assets/js/lib/slick.js"></script> -->
-<!-- <script type="text/javascript" src="assets/js/common.js"></script> -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/gsap@3.12.1/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.11.4/dist/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/Observer.min.js"></script>
+<script type="text/javascript" src="assets/js/common.js"></script>
 <script>
     // var tl = gsap.timeline();
 
@@ -229,6 +234,52 @@
     // tl.to(".load-wrapper", {
     //     display: 'none'
     // });
+    gsap.registerPlugin(ScrollTrigger);
+
+    /*
+    gsap.to(".main__2 .main__head--title", {
+        scrollTrigger: {
+            trigger: '.main__2 .main__head--title',
+            pin: true,
+            값을 하나만 넣을 시, viewport 기준 ScrollTrigger의 시작점. 예시) 400px = 스크롤 시작 후 400px 떨어진 시점
+            값을 두개 넣을 시
+            첫번째 값 : top center bottom - trigger가 시작되는 기준 점
+            두번째 값 : top center bottom - viewport에서 스크롤의 위치
+            예시) start: top center => 트리거의 윗부분이 viewport기준 중간에 닿았을 때 시작
+            function 으로도 작성 가능
+                scrollTrigger: {
+                    end: () => `+=${document.querySelector('.square').offsetHeight}`
+                }
+            start: "top top",
+            end: "bottom bottom",
+            // end: "+=500"//시작 부분부터 500px까지 스크롤 한 후종료
+            scrub: 1,//부드러운 스크러빙
+        },
+        x: 100,
+        rotation: 360
+    });
+    */
+
+    /*
+    https://velog.io/@yesslkim94/GSAP-ScrollTrigger
+    
+    **timeline**
+    const tl = gsap.timeline();
+    tl.to('.box1', {x: 500, duration: 2})
+      .to('.box2', {y: 200, duration: 3})
+
+    const tl2 = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.main',
+            start: 'top 20%',
+            end: 'top 80%'
+        }
+    })
+
+    tl2.to('.div1', {x: 500, duration: 2})
+       .to('.div2', {y: 200, duration: 3})
+    
+    */
 </script>
 
 </body>
