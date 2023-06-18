@@ -22,21 +22,70 @@
             </a>
             <div class="header__menu">
                 <a href="" target="_blank" class="btn_primary">The other HAFH</a>
-                <button type="button" class="btn_menu"></button>
+                <button type="button" class="btn_menu">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </button>
             </div>
         </div>
         <nav>
-            <ul>
-
+            <form>
+                <input type="text" placeholder="Search...">
+            </form>
+            <ul class="nav__menu">
+                <li>
+                    <a href="">The Edits</a>
+                </li>
+                <li>
+                    <a href="">Hotels</a>
+                </li>
+                <li>
+                    <a href="">People</a>
+                </li>
+                <li>
+                    <a href="">Shop</a>
+                </li>
+                <li>
+                    <a href="">About Us</a>
+                </li>
+                <li>
+                    <a href="">Contact Us</a>
+                </li>
+                <li class="gold">
+                    <a href="">The Other HAFH</a>
+                </li>
             </ul>
+            <div class="nav__footer">
+                <p>ALL RIGHTS RESERVED</p>
+                <ul>
+                    <li>
+                        <a href="">INSTAGRAM</a>
+                    </li>
+                    <li>
+                        <a href="">PINTEREST</a>
+                    </li>
+                    <li>
+                        <a href="">SPOTIFY</a>
+                    </li>
+                    <li>
+                        <P>©2022</P>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </header>
     
     <div id="container" class="main">
         <section class="main__1 main__start">
-            <h1 class="title">The destination for your next one</h1>
-            <p class="desc">hafh is a discovery platform for the modern traveller</p>
-            <button type="button" class="btn_primary">What we're about</button>
+            <div class="text_wrap">
+                <h1 class="title">The destination for your next one</h1>
+            </div>
+            <div class="text_wrap">
+                <p class="desc">hafh is a discovery platform for the modern traveller</p>
+            </div>
+            <div class="text_wrap">
+                <button type="button" class="btn_primary">What we're about</button>
+            </div>
             <div class="main__1--image">
                 <img src="assets/images/image1.jpeg" alt="">
                 <img src="assets/images/image2.jpg" alt="">
@@ -136,6 +185,8 @@
             <h1 class="title">Jackson Hole, Wyoming</h1>
             <p class="desc">Encompassed by rugged mountains, jackson hole has fast become a place to see and be seen.</p>
             <button type="button" class="btn_primary white">Explore edit</button>
+            <img src="assets/images/location1.gif" alt="" class="img img1">
+            <img src="assets/images/location2.gif" alt="" class="img img2">
         </section>
         <section class="main__5">
             <div class="main__head">
@@ -199,42 +250,92 @@
                     </li>
                 </ul>
         </section>
+        <section class="main__6">
+            <div class="item item1">
+                <div class="image">
+                    <img src="assets/images/frame1.jpeg" alt="">
+                </div>
+                <div class="image">
+                    <img src="assets/images/frame2.jpeg" alt="">
+                </div>
+            </div>
+            <div class="item item2">
+                <div class="image">
+                    <img src="assets/images/frame3.jpeg" alt="">
+                </div>
+                <div class="image">
+                    <img src="assets/images/frame4.jpeg" alt="">
+                </div>
+            </div>
+            <div class="item item3">
+                <div class="image">
+                    <img src="assets/images/frame5.jpeg" alt="">
+                </div>
+                <div class="image">
+                    <img src="assets/images/frame6.jpeg" alt="">
+                </div>
+            </div>
+        </section>
     </div>
-
-    <footer>
-        <div class="footer_wrap">
-
+    <footer class="footer">
+        <div class="footer__contents">
+            <div>
+                <p class="footer__contents--title">Stay in the know</p>
+                <button type="button" class="btn_primary white">Read our Substack</button>
+            </div>
+            <div>
+                <p class="footer__contents--title">Get in touch</p>
+                <button type="button" class="btn_primary white">Read our Substack</button>
+            </div>
+        </div>
+        <div class="footer__info">
+            <ul>
+                <li>
+                    <p>EMAIL</p>
+                    <a href="">HELLO@HAFHCIRCLE.COM</a>
+                </li>
+                <li>
+                    <p>SOCIALS</p>
+                    <div>
+                        <a href="">INSTAGRAM</a>
+                        <a href="">PINTEREST</a>
+                        <a href="">SPOTIFY</a>
+                    </div>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <p>LEGAL</p>
+                    <div>
+                        <a href="">PRIVACY POLICY</a>
+                        <a href="">TERMS OF USE</a>
+                        <a href="">AFFILIATE DISCLOSURE</a>
+                    </div>
+                </li>
+                <li>
+                    <p>DESIGNED BY</p>
+                    <a href="">MARTIN BRICENO</a>
+                </li>
+                <li>
+                    <p>DEVELOPED BY</p>
+                    <a href="">ILJA VAN ECK</a>
+                </li>
+            </ul>
         </div>
     </footer>
 </div>
 <div class="load-wrapper">
     <h1><p>HAFH</p></h1>
 </div>
-<!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> -->
 <script type="text/javascript" src="assets/js/lib/jquery-3.5.1.min.js"></script>
-<!-- <script type="text/javascript" src="assets/js/lib/slick.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.11.4/dist/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/Observer.min.js"></script>
 <script type="text/javascript" src="assets/js/common.js"></script>
+<script type="text/javascript" src="assets/js/animation.js"></script>
 <script>
-    // var tl = gsap.timeline();
-
-    // tl.to(".load-wrapper p", {
-    //     y: 0,
-    //     delay: 0.2
-    // });
-    // tl.to(".load-wrapper p", {
-    //     y: "100%",
-    //     delay: 0.5
-    // });
-    // tl.to(".load-wrapper", {
-    //     y: "100%",
-    // });
-    // tl.to(".load-wrapper", {
-    //     display: 'none'
-    // });
-    gsap.registerPlugin(ScrollTrigger);
+    
+    
 
     /*
     gsap.to(".main__2 .main__head--title", {

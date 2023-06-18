@@ -1,33 +1,90 @@
-const section1 = gsap.timeline({
-	scrollTrigger: {
-		trigger: '#wrapper',
-		start: 'top 20%',
-		end: 'top 80%'
-	}
-});
+var HAFH = window.HAFH || {};
+HAFH = (function($) {
+	'use strict';
+	var common = {
+		layerOpen: function(target) {
+			var el = $(target);
+			el.removeClass('is-hidden').addClass('is-open');
+			$('html').addClass('layer-opens');
+			return false;
+		},
+		layerClose: function(target) {
+			var el = $(target);
+			el.removeClass('is-open').addClass('is-hidden');
+			$('html').removeClass('layer-opens');
+			return false;
+		},
+		layerToggle: function (target) {
+            var el = $(target);
+            if (el.hasClass('is-active')) {
+                el.removeClass('is-active');
+            } else {
+                el.addClass('is-active');
+            }
+        },
+		moveTop: function(){
+			$(document).on('click', '.btn_top', function(){
+				$('html, body').animate({'scrollTop' : 0});
+			});
+		},
+        navToggle: function(){
+            $(document).on('click', '.btn_menu', function(){
+                if($('body').hasClass('nav-opens')){
+                    $('body').removeClass('nav-opens');
+                    $('nav').stop().animate({right:'-40%'},700);
+                } else {
+                    $('body').addClass('nav-opens');
+                    $('nav').animate({right:0},700);
+                }	
+			});
+        },
+		navOpen: function(){
+			$(document).on('click', '.btn_menu', function(){
+				$('body').addClass('nav-opens');
+			});
+		},
+		navClose: function(){
+			$(document).on('click', '.btn_menu', function(){
+				$('body').removeClass('nav-opens');
+			});
+		},
+		init: function() {
+			common.navToggle();
+		}
+	};
 
-ScrollTrigger.create({
-	trigger: "header",
-	start: "top 5%",
-	toggleClass: {targets: '.header', className: 'active'}
-});
+	var main = {
+		init: function() {
+		}
+	};
 
-section1.to('.main__start .title', {y: 0, opacity: 1,  duration: 0.8})
-   .to('.main__start .desc', {y: 0, opacity: 1,  duration: 0.7})
-   .to('.main__start .btn_primary', {y: 0, opacity: 1,  duration: 0.7})
 
-gsap.to('.main__2--image div',{
-	scrollTrigger:{
-	trigger: '.main__1',
-	start: 'bottom 30%',
-	// markers: true
-	},
-	height: 0,
-});
+	$(document).ready(function() {
+		common.init();
 
-ScrollTrigger.create({
-	trigger: 'main__4',
-	markers: true,
-	// start:
-	toggleClass: {targets: '.main__4', className: 'active'}
+		// if( $('.main').length > 0 ){
+		// 	main.init();
+		// }
+
+		// if( $('.brand').length > 0  && window.innerWidth > 768 ){
+		// 	brand.init();
+		// }
+
+		// if (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > -1) {
+		// 	$('body').addClass('ie');
+		// }
+
+	});
+
+	return {
+		layerOpen: common.layerOpen,
+		layerClose: common.layerClose,
+	};
+})($);
+
+var timer;
+var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+$(window).resize(function() {
+	
 });
