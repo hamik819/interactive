@@ -11,29 +11,6 @@ body{
     &.layer-opens{
         overflow: hidden;
     }
-    &.nav-opens{
-        .header__menu{
-            .btn_menu{
-                .line{
-                    &:nth-of-type(1){
-                        transform: translate3d(0px, 4.5px, 0px) rotateZ(135deg);
-                    }
-                    &:nth-of-type(2){
-                        transform: translate3d(0px, -4.5px, 0px) rotateZ(-135deg);
-                    }
-                }
-            }
-        }
-        nav{
-            .nav__menu{
-                a{
-                    transform: translateY(0);
-                    opacity: 1;
-                    transition: 1s 0.3s;
-                }
-            }
-        }
-    }
 }
 #wrapper{
     width: 100%;
@@ -41,9 +18,7 @@ body{
     position: relative;
 }
 #container{
-    // min-height:calc(100vh - 86px - 278px);
     position: relative;
-    @include vw-convert-pc(padding-top, 190);
 }
 .load-wrapper{
     display: flex;
@@ -83,10 +58,14 @@ header{
         &__menu{
             display: flex;
             gap: 20px;
-            transform: translateY(100%);
-            opacity: 0;
             transition: 1s;
             z-index: 2;
+        }
+        &.hide{
+            .logo, .header__menu{
+                transform: translateY(-100%);
+                opacity: 0;
+            }
         }
         &.active{
             .logo, .header__menu{
@@ -98,8 +77,6 @@ header{
     .logo{
         display: inline-block;
         @include vw-convert-pc(width, 90);
-        transform: translateY(100%);
-        opacity: 0;
         transition: 1s;
         img{
             width: 100%;
@@ -123,6 +100,16 @@ header{
                 position: relative;
                 transition: 0.5s;
             }
+            &.on{
+                .line{
+                    &:nth-of-type(1){
+                        transform: translate3d(0px, 4.5px, 0px) rotateZ(135deg);
+                    }
+                    &:nth-of-type(2){
+                        transform: translate3d(0px, -4.5px, 0px) rotateZ(-135deg);
+                    }
+                }
+            }
         }
     }
     nav{
@@ -132,7 +119,8 @@ header{
         width: 40%;
         height: 100vh;
         background-color: rgb(29, 29, 29);
-        padding: 200px 50px 0;
+        padding: 200px 50px 50px;
+        overflow-y: auto;
         input{
             background-color: transparent;
             border: none;
@@ -149,6 +137,7 @@ header{
                 margin: 50px 0 30px;
                 li{
                     margin-bottom: 20px;
+                    overflow: hidden;
                     &.gold{
                         a{
                             color: #b7864c;
@@ -161,8 +150,6 @@ header{
                     font-family: $point-font;
                     @include em-font-size-pc(40);
                     font-weight: 700;
-                    transform: translateY(100%);
-                    opacity: 0;
                 }
             }
             &__footer{
@@ -189,6 +176,9 @@ section{
 .footer{
     background-color: rgb(29, 29, 29);
     height: 100vh;
+    &.on{
+        background-color: #fff;
+    }
     &__contents{
         height: calc(100vh - 175px);
         color: #fff;
@@ -197,7 +187,22 @@ section{
         justify-content: center;
         text-align: center;
         position: relative;
-        border-bottom: 1px solid #8a8a8a;
+        &.show{
+            &:after{
+                transform: scaleY(1);
+                transition: 1s;
+            }
+        }
+        &:after{
+            position: absolute;
+            top: 0;
+            left: 50%;
+            height: 100%;
+            background-color: #fff;
+            width: 1px;
+            content: '';
+            transform: scaleY(0);
+        }
         div{
             width: 50%;
             height: 100%;
@@ -206,9 +211,6 @@ section{
             align-items: center;
             justify-content: center;
             gap: 50px;
-            &:nth-of-type(1){
-                border-right: 1px solid #8a8a8a;
-            }
         }
         &--title{
             font-size: 50px;
@@ -220,6 +222,23 @@ section{
         justify-content: space-between;
         align-items: center;
         padding: 60px 40px;
+        position: relative;
+        &.show{
+            &:after{
+                transform: scaleX(1);
+                transition: 1s;
+            }
+        }
+        &:after{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: #fff;
+            content: '';
+            transform: scaleX(0);
+        }
         ul{
             display: flex;
             gap: 60px;

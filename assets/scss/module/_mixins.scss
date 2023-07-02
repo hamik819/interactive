@@ -78,3 +78,24 @@ $browser-context-mo: 14;
 @mixin em-font-size-mo($pixels, $context: $browser-context-mo) {
 	font-size: math.div($pixels, $context) * 1em;
 }
+
+// 1401
+$pc: 1400px; // 1400 ~ 1025
+$tablet: 1024px; // 1024 ~ 768
+$mo: 768px; // 767px ~ 320px
+
+@mixin pc{
+    @media (max-width: $pc) {
+        @content;
+    }
+}
+@mixin tablet{
+    @media (max-width: $tablet) {
+        @content;
+    }
+}
+@mixin mo{
+    @media (max-width: $mo) {
+        @content;
+    }
+}

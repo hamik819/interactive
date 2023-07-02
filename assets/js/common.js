@@ -26,7 +26,7 @@ HAFH = (function($) {
 			$(document).on('click', '.btn_top', function(){
 				$('html, body').animate({'scrollTop' : 0});
 			});
-		},
+		}, 
         navToggle: function(){
             $(document).on('click', '.btn_menu', function(){
                 if($('body').hasClass('nav-opens')){
@@ -48,8 +48,20 @@ HAFH = (function($) {
 				$('body').removeClass('nav-opens');
 			});
 		},
+        headerMotion: function(){
+            let lastScroll = 0;
+            $(window).scroll(function(){
+                const curr = $(this).scrollTop();
+                if(curr > lastScroll){
+                    $('.header').addClass('hide');
+                } else {
+                    $('.header').removeClass('hide');
+                }
+                lastScroll = curr;
+            });
+        },
 		init: function() {
-			common.navToggle();
+            common.headerMotion();
 		}
 	};
 
